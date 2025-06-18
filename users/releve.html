@@ -54,7 +54,40 @@
 {
     display: table-cell;
     
-}
+}  .menu-container {
+      display: flex;
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 40px;
+      padding: 10px 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .menu-item {
+      flex: 1;
+      text-align: center;
+      padding: 10px 15px;
+      position: relative;
+      cursor: pointer;
+      color: #0070f3;
+    }
+
+    .menu-item.active::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 25%;
+      width: 50%;
+      height: 4px;
+      background-color: #0070f3;
+      border-radius: 3px;
+    }
+
+    .menu-item i {
+      font-size: 20px;
+      display: block;
+      margin-bottom: 5px;
+    }
 	   </style>
   </head>
 
@@ -338,21 +371,23 @@ Notre politique de sécurité a été mise en place afin de garantir des transac
              <div class="col-md-12">
 		     <br> <br> <br>     </div>
 		   </div>
-<div class="Row" style="background-color:silver;color:#000;">
-    <div class="Column hvr-pulse-grow" style="text-align:center;font-size:9px;" ><a href="index.html" style=" color:#666666;"><i class="fa fa-money fa-3x "></i>   
-	<p style="font-size:13px;">Solde</p>
-	 </a></div>
-   
- <div class="Column hvr-pulse-grow" style="text-align:center;font-size:9px;"><a href="carte.html" style=" color:#666666;"><i class="fa fa-credit-card-alt fa-3x"></i>
-   <p style="font-size:13px;">Carte</p>
-	 </a></div>
-    <div class="Column hvr-pulse-grow" style="text-align:center;font-size:9px;">
-	<a href="virement.html" style=" color:#666666;"> <i class="fa fa-exchange fa-3x"></i>   <p style="font-size:13px;">Virements</p></a> </div>
-    
-   
- <div class="Column hvr-pulse-grow" style="text-align:center;font-size:9px;"><a href="releve.html" style=" color:#003399;"><i class="fa fa-user fa-3x"></i>  
-      <p style="font-size:13px;">Comptes</p>
-	 </a></div></div>		  <!-- <div class="Row" style="background-color:#000;color:#fff;">
+   <div class="menu-container">
+    <div class="menu-item ">
+     <a href="index.html"> <i class="fa fa-money fa-3x "></i> 
+      Accueil</a>
+    </div>
+    <div class="menu-item  ">
+    <a href="carte.html"><i class="fa fa-credit-card-alt fa-3x"></i>
+      Ma carte</a>
+    </div>
+    <div class="menu-item">
+     <a href="virement.html"> <i class="fa fa-exchange fa-3x"></i> 
+      Virement</a>
+    </div>
+    <div class="menu-item active">
+    <a href="releve.html"><i class="fa fa-user fa-3x"></i> Compte</a>  
+    </div>
+  </div>			  <!-- <div class="Row" style="background-color:#000;color:#fff;">
     <div class="Column" style="text-align:center;"><a style="background-color:#000;color:#fff;"> A Propos 
 	 </a></div>
     <div class="Column" style="text-align:center"> <a href="#" style="background-color:#000;color:#fff;"> Parler à un conseiller</a> </div>
