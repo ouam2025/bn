@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accueil - UBS</title>
+<style>
+/* Généralités CSS */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.header {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.header h1 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.quick-actions {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.quick-actions div {
+    font-size: 14px;
+    color: #444;
+}
+
+.account-info {
+    text-align: center;
+    padding: 30px 10px;
+    background-color: #fff;
+}
+
+.account-info h2 {
+    margin: 10px 0 5px;
+}
+
+.account-info p {
+    margin: 3px 0;
+    font-size: 15px;
+    color: #555;
+}
+
+.menu {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    display: flex;
+    justify-content: space-around;
+    font-size: 14px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: #666;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+.menu a.active {
+    color: red;
+    font-weight: bold;
+}
+
+/* Animation pour l'interface entre les rubriques */
+.section {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>UBS Banque</h1>
+    <div class="dropdown">
+        <span>☰</span>
+        <div class="dropdown-content">
+            <a href="index.html" onclick="showSection('home')">Accueil</a>
+            <a href="virement.html" onclick="showSection('virement')">Virement</a>
+            <a href="rib.html" onclick="showSection('rib')">RIB</a>
+            <a href="cartes.html" onclick="showSection('cartes')">Cartes</a>
+            <a href="operations.html" onclick="showSection('operations')">Opérations</a>
+            <a href="epargne.html" onclick="showSection('epargne')">Piloter mon épargne</a>
+            <a href="parametres.html" onclick="showSection('parametres')">Paramètres</a>
+        </div>
+    </div>
+</div>
+
+<!-- Rubriques -->
+<div id="home" class="section" style="display:block;">
+    <div class="quick-actions">
+        <div>Scan & Pay</div>
+        <div>Changer de carte</div>
+        <div>Transfert</div>
+    </div>
+    <div class="account-info">
+        <h2>Solde: 158 395,25 €</h2>
+        <p>Muriel A. Lambert</p>
+        <p>IBAN: CH12 3000 0001 2345 6789 0</p>
+        <p>08 avril 2025</p>
+    </div>
+</div>
+
+<!-- Exemple de section supplémentaire, tu ajouteras les autres pages ici -->
+<div id="virement" class="section">
+    <h2>Virement</h2>
+    <p>Content de la page Virement</p>
+</div>
+
+<!-- Menu de navigation fixe -->
+<div class="menu">
+    <a href="index.html" class="active">Home</a>
+    <a href="paiement.html">Paiements</a>
+    <a href="comptes.html">Comptes</a>
+    <a href="cartes.html">Cartes</a>
+    <a href="plus.html">Plus</a>
+</div>
+
+<script>
+// Fonction pour afficher les sections
+function showSection(sectionId) {
+    // Cacher toutes les sections
+    let sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+        section.style.display = 'none';
+    });
+
+    // Afficher la section demandée
+    let sectionToShow = document.getElementById(sectionId);
+    sectionToShow.style.display = 'block';
+}
+</script>
+
+</body>
+</html>
